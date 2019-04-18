@@ -994,9 +994,9 @@ style = {
    },
    'village_lbl_size': {
       0:0,
-      10:8,
-      13:9,
-      15:10
+      10:6,
+      13:7,
+      15:8
    },
    'village_size': {
       0:0,
@@ -1015,7 +1015,7 @@ style = {
 
    'display_hamlets': {
       0:0,
-      13:1
+      13:0
    },
    'hamlet_font': "sc",
    'hamlet_lbl_clr': {
@@ -1036,7 +1036,7 @@ style = {
 
    'display_localities': {
       0:0,
-      13:1
+      13:0
    },
    'locality_font': "sc",
    'locality_lbl_clr': {
@@ -1201,8 +1201,7 @@ namedstyles = {
       'tertiary_ol_clr': '193 181 157',
       'other_ol_clr': '193 181 157',
       'pedestrian_ol_clr': '193 181 157',
-      'pier_ol_clr': '193 181 157',
-      'display_buildings':1
+      'display_buildings':{ 0:0, 15:1}
    },
    'michelin':{
       'motorway_clr': '228 24 24',
