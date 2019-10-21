@@ -1,11 +1,11 @@
 #if _display_landusage == 1
 LAYER
+    NAME layername(landuse,_layer_suffix)
     TYPE POLYGON
     STATUS ON
     PROJECTION
         "init=epsg:OSM_SRID"
     END
-    NAME layername(landuse,_layer_suffix)
     GROUP "default"
     CONNECTIONTYPE POSTGIS
     CONNECTION "OSM_DB_CONNECTION"
@@ -17,6 +17,7 @@ LAYER
     PROCESSING "CLOSE_CONNECTION=DEFER"
     MAXSCALEDENOM _maxscale
     MINSCALEDENOM _minscale
+    SIZEUNITS meters
     CLASSITEM "type"
     LABELITEM "name"
 #if _display_forest==1
@@ -166,7 +167,6 @@ LAYER
       END
 #endif
    END
-#if _display_hospital==1
     CLASS
         EXPRESSION 'hospital'
         STYLE
@@ -218,7 +218,7 @@ LAYER
 #endif
 #if _display_sports==1
     CLASS
-      EXPRESSION {sports_center,stadium,pitch}
+      EXPRESSION {sports_center,stadium}
       STYLE
           COLOR _sports_clr
       END
@@ -230,7 +230,7 @@ LAYER
         SIZE _sports_lbl_size
         COLOR _sports_lbl_clr
         OUTLINECOLOR _sports_lbl_ol_clr
-       ENCODING "utf-8"
+        ENCODING "utf-8"
         OUTLINEWIDTH _sports_lbl_ol_width
         PRIORITY 1
         WRAP ' '
@@ -241,7 +241,8 @@ LAYER
 #endif
     END
 #endif
-END
+
+END ##END LAYER
 
 #if _display_transport_areas == 1
 LAYER
@@ -302,7 +303,7 @@ LAYER
 #endif
     DATA _waterarea_data
     MAXSCALEDENOM _maxscale
-    MINSCALEDENOM _minscale  
+    MINSCALEDENOM _minscale
     PROCESSING "CLOSE_CONNECTION=DEFER"
     LABELITEM "name"
     CLASSITEM "type"
@@ -371,7 +372,7 @@ LAYER
     CLASS
         EXPRESSION "river"
         STYLE
-            COLOR _river_clr 
+            COLOR _river_clr
             WIDTH _river_width
         END
 #if _display_river_lbl == 1
