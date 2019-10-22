@@ -17,7 +17,6 @@ LAYER
     PROCESSING "CLOSE_CONNECTION=DEFER"
     MAXSCALEDENOM _maxscale
     MINSCALEDENOM _minscale
-    SIZEUNITS meters
     CLASSITEM "type"
     LABELITEM "name"
 #if _display_forest==1
@@ -240,7 +239,30 @@ LAYER
       END
 #endif
     END
+    CLASS
+      NAME "pitch"
+      EXPRESSION "pitch"
+      STYLE
+          COLOR _sports_clr
+      END
+#if _display_sports_lbl==1
+      LABEL
+        TYPE TRUETYPE
+        PARTIALS FALSE
+        FONT _sports_font
+        SIZE _sports_lbl_size
+        COLOR _sports_lbl_clr
+        OUTLINECOLOR _sports_lbl_ol_clr
+        ENCODING "utf-8"
+        OUTLINEWIDTH _sports_lbl_ol_width
+        PRIORITY 1
+        WRAP ' '
+        MAXLENGTH 6
+        ALIGN CENTER
+        MINFEATURESIZE AUTO
+      END
 #endif
+    END
 
 END ##END LAYER
 
