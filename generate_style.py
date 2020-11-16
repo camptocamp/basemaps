@@ -767,8 +767,8 @@ vars= {
       0: 0,
       15:1
    },
-   'building_clr': '"#bbbbbb"',
-   'building_ol_clr': '"#333333"',
+   'building_clr': '"#e2ded3"',
+   #'building_ol_clr': '"#333333"',
    'building_ol_width': {
       0:0,
       16:0.1,
