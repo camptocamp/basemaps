@@ -1592,6 +1592,7 @@ namedstyles = {
 # e.g. with `make STYLE=google`. This will create an osm-google.map mapfile
 style_aliases = {
    "cagc":"default,outlined,cagc",
+   "cagc_2":"default,outlined,cagc_2",
    # map with no road casing and few colors, suited for using as a basemap when overlaying
    # other layers without risk of confusion between layers.
    "default":"default",
