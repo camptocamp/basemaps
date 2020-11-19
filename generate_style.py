@@ -483,7 +483,7 @@ vars= {
    },
    'label_tertiaries': {
       0:0,
-      15:1
+      16:1
    },
    'tertiary_font': "sc",
    'tertiary_lbl_size': {
@@ -518,7 +518,7 @@ vars= {
    },
    'label_other_roads': {
       0:0,
-      15:1
+      16:1
    },
    'other_font': "sc",
    'other_lbl_size': {
@@ -550,7 +550,7 @@ vars= {
    },
    'label_pedestrian': {
       0:0,
-      15:1
+      16:1
    },
    'display_pedestrian_lbl' : {0:0, 12:1},
    'pedestrian_font': "sc",
@@ -1201,7 +1201,8 @@ styles = {
       'forest_clr': "143 205 135",
       #'forest_clr': "192 227 187",
       'industrial_clr': "209 208 205",
-      'education_clr': "222 210 172",
+      #'education_clr': "222 210 172",
+      'education_clr': "245 227 162",
       'hospital_clr': "229 198 195",
       'residential_clr': "242 239 233",
       'land_clr': "242 239 233",
