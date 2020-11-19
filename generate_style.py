@@ -221,7 +221,8 @@ vars= {
    'display_hospital_lbl' : {0:0, 12:1},
    'hospital_font': "sc",
    'hospital_lbl_size': 8,
-   'hospital_lbl_clr': '0 0 0',
+   #'hospital_lbl_clr': '0 0 0',
+   'hospital_lbl_clr': '255 0 0',
    'hospital_lbl_ol_clr': "255 255 255",
    'hospital_lbl_ol_width': 2,
 
@@ -242,7 +243,8 @@ vars= {
    'sports_lbl_ol_clr': "255 255 255",
    'sports_lbl_ol_width': 2,
 
-   'cemetery_clr': '"#d1d1d1"',
+   #'cemetery_clr': '"#d1d1d1"',
+   'cemetery_clr': '"#a3a3a3"',
    'display_cemetery_lbl' : {0:0, 12:1},
    'cemetery_font': "sc",
    'cemetery_lbl_size': 8,
