@@ -454,7 +454,7 @@ style = {
    },
    'label_secondaries': {
       0:0,
-      13:1
+      10:1
    },
    'secondary_font': "sc",
    'secondary_lbl_size': {
