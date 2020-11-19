@@ -233,7 +233,8 @@ vars= {
    'education_lbl_ol_clr': "255 255 255",
    'education_lbl_ol_width': 2,
 
-   'sports_clr': '"#C2D1B2"',
+   'sports_clr': '"#007520"',
+   #'sports_clr': '"#C2D1B2"',
    'display_sports_lbl' : {0:0, 12:1},
    'sports_font': "sc",
    'sports_lbl_size': 8,
