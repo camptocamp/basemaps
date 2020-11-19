@@ -412,7 +412,7 @@ style = {
    },
    'label_primaries': {
       0:0,
-      13:1
+      16:1
    },
    'primary_font': "sc",
    'primary_lbl_size': {
@@ -454,7 +454,7 @@ style = {
    },
    'label_secondaries': {
       0:0,
-      17:1
+      16:1
    },
    'secondary_font': "sc",
    'secondary_lbl_size': {
