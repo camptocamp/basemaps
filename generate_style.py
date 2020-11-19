@@ -1234,7 +1234,7 @@ namedstyles = {
       'residential_clr': "242 239 233",
       'land_clr': "242 239 233",
       #'park_clr': '181 210 156',
-      'park_clr': '74 109 44',
+      'park_clr': '109 184 45',
       #'ocean_clr': '153 179 204',
       'ocean_clr': '170 216 249',
       #'waterarea_clr': '153 179 204',
