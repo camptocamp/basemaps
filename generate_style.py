@@ -446,7 +446,7 @@ vars= {
    },
    'label_secondaries': {
       0:0,
-      15:1
+      17:1
    },
    'secondary_font': "sc",
    'secondary_lbl_size': {
