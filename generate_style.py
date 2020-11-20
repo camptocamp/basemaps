@@ -794,8 +794,6 @@ style = {
    },
    'building_clr': '"#bbbbbb"',
    'building_ol_clr': '"#333333"',
-   #'building_clr': '#d3d0c7',
-   #'building_ol_clr': '#d3d0c7',
 
    'building_ol_width': {
       0:0,
@@ -1232,7 +1230,8 @@ namedstyles = {
       #'forest_clr': "203 216 195",
       'forest_clr': "143 205 135",
       #'forest_clr': "192 227 187",
-      'industrial_clr': "209 208 205",
+      #'industrial_clr': "209 208 205",
+      'industrial_clr': "237 237 237",
       #'education_clr': "222 210 172",
       'education_clr': "245 227 162",
       'hospital_clr': "229 198 195",
@@ -1251,8 +1250,8 @@ namedstyles = {
       #'canal_clr': '153 179 204',
       'canal_clr': '170 216 249',
 
-      #'building_clr': '#d3d0c7',
-      #'building_ol_clr': '#d3d0c7',
+      'building_clr': '#d3d0c7',
+      'building_ol_clr': '#d3d0c7',
 
       'motorway_ol_clr': '186 110 39',
       'trunk_ol_clr': '221 159 17',
