@@ -1223,8 +1223,8 @@ styles = {
       #'canal_clr': '153 179 204',
       'canal_clr': '170 216 249',
 
-      'building_clr': '#d3d0c7',
-      'building_ol_clr': '#d3d0c7',
+      #'building_clr': '#d3d0c7',
+      #'building_ol_clr': '#d3d0c7',
 
       'motorway_ol_clr': '186 110 39',
       'trunk_ol_clr': '221 159 17',
