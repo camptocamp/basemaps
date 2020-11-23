@@ -631,7 +631,8 @@ style = {
    },
    'display_footway_outline': 0,
    'footway_clr': {
-      0:'"#aaaaaa"',
+      #0:'"#aaaaaa"',
+      0:'"#bc183b"',
       15:'"#ffffff"',
    },
    'footway_width': {
