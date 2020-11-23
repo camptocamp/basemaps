@@ -794,8 +794,6 @@ style = {
    },
    'building_clr': '"#bbbbbb"',
    'building_ol_clr': '"#333333"',
-   #'building_clr': '"#d3d0c7"',
-   #'building_ol_clr': '"#d3d0c7"',
 
    'building_ol_width': {
       0:0,
@@ -1242,7 +1240,8 @@ namedstyles = {
       #'land_clr': "242 239 233",
       'land_clr': "251 250 246",
       #'park_clr': '181 210 156',
-      'park_clr': '109 184 45',
+      #'park_clr': '109 184 45',
+      'park_clr': '143 205 135',
       #'ocean_clr': '153 179 204',
       'ocean_clr': '170 216 249',
       #'waterarea_clr': '153 179 204',
