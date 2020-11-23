@@ -794,8 +794,8 @@ style = {
    },
    #'building_clr': '"#bbbbbb"',
    #'building_ol_clr': '"#333333"',
-   'building_clr': '#d3d0c7',
-   'building_ol_clr': '#d3d0c7',
+   'building_clr': '"#d3d0c7"',
+   'building_ol_clr': '"#d3d0c7"',
 
    'building_ol_width': {
       0:0,
