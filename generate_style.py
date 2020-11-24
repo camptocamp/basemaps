@@ -634,11 +634,11 @@ style = {
       #0:'"#aaaaaa"',
       0:'"#ea6fb0"',
       #15:'"#ffffff"',
-      18:'"#ea6fb0"',
+      17:'"#ea6fb0"',
    },
    'footway_width': {
       0:0,
-      18:1,
+      17:1,
    },
    'footway_pattern': '2 3',
    'footway_ol_width': 1,
