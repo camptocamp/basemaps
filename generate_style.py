@@ -625,17 +625,17 @@ vars= {
    'display_footway_outline': 0,
    'footway_clr': {
       #0:'"#aaaaaa"',
-      0:'"#bc183b"',
+      0:'"#ea6fb0"',
       #15:'"#ffffff"',
-      17:'"#ea6fb0"',
+      18:'"#ea6fb0"',
    },
    'footway_width': {
       0:0,
-      15:1,
+      18:1,
    },
    'footway_pattern': '2 3',
    'footway_ol_width': 1,
-   'footway_ol_clr': "0 0 0",
+   'footway_ol_clr': "255 255 255",
 
    ###### railways ########
    'display_railways': {
