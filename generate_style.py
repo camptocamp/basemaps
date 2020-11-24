@@ -627,7 +627,7 @@ vars= {
       #0:'"#aaaaaa"',
       0:'"#bc183b"',
       #15:'"#ffffff"',
-      15:'"#bc183b"',
+      17:'"#ea6fb0"',
    },
    'footway_width': {
       0:0,
