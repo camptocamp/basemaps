@@ -263,6 +263,30 @@ LAYER
       END
 #endif
     END
+    CLASS
+      NAME "leisure_track"
+      EXPRESSION "track"
+      STYLE
+          COLOR _leisure_track_clr
+      END
+#if _display_leisure_track_lbl==1
+      LABEL
+        TYPE TRUETYPE
+        PARTIALS FALSE
+        FONT _leisure_track_font
+        SIZE _leisure_track_lbl_size
+        COLOR _leisure_track_lbl_clr
+        OUTLINECOLOR _leisure_track_lbl_ol_clr
+        ENCODING "utf-8"
+        OUTLINEWIDTH _leisure_track_lbl_ol_width
+        PRIORITY 1
+        WRAP ' '
+        MAXLENGTH 6
+        ALIGN CENTER
+        MINFEATURESIZE AUTO
+      END
+#endif
+    END
 
 END ##END LAYER
 
@@ -332,24 +356,24 @@ LAYER
     CLASS
       EXPRESSION "riverbank"
 #if _display_waterarea_outline
-        STYLE           
+        STYLE
            OUTLINECOLOR _waterarea_ol_clr
            OUTLINEWIDTH _waterarea_ol_width
         END
 #endif
         STYLE
-            COLOR _waterarea_clr    
+            COLOR _waterarea_clr
         END
     END
     CLASS
 #if _display_waterarea_outline
-        STYLE           
+        STYLE
            OUTLINECOLOR _waterarea_ol_clr
            OUTLINEWIDTH _waterarea_ol_width
         END
 #endif
         STYLE
-            COLOR _waterarea_clr    
+            COLOR _waterarea_clr
         END
 #if _display_waterarea_lbl == 1
         LABEL

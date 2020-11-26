@@ -181,12 +181,12 @@ style = {
       where type in (\'forest\',\'wood\',\'pedestrian\',\'cemetery\',\'industrial\',\'commercial\',\
       \'brownfield\',\'residential\',\'school\',\'college\',\'university\',\
       \'military\',\'park\',\'golf_course\',\'hospital\',\'parking\',\'stadium\',\'sports_center\',\
-      \'pitch\') order by area desc) as foo using unique osm_id using srid=OSM_SRID"',
-      12:'"geometry from (select geometry ,osm_id, type, OSM_NAME_COLUMN as name from OSM_SCHEMA.OSM_PREFIX_landusages \
+      \'pitch\',\'leisure_track\') order by area desc) as foo using unique osm_id using srid=OSM_SRID"',
+      12:'"geometry from (select geometry ,osm_id, type, OSM_NAME_COLUMN as name from OSM_PREFIX_landusages \
       where type in (\'forest\',\'wood\',\'pedestrian\',\'cemetery\',\'industrial\',\'commercial\',\
       \'brownfield\',\'residential\',\'school\',\'college\',\'university\',\
       \'military\',\'park\',\'golf_course\',\'hospital\',\'parking\',\'stadium\',\'sports_center\',\
-      \'pitch\') order by area desc) as foo using unique osm_id using\
+      \'pitch\',\'leisure_track\') order by area desc) as foo using unique osm_id using\
       srid=OSM_SRID"'
       },
 
@@ -275,6 +275,17 @@ style = {
    'transport_lbl_clr': '0 0 0',
    'transport_lbl_ol_clr': "255 255 255",
    'transport_lbl_ol_width': 2,
+
+   'leisure_track_clr': '"000000"',
+   #'leisure_track_clr': '"#a3a3a3"',
+   'display_leisure_track_lbl' : {0:0, 9:1},
+   'leisure_track_font': "sc",
+   'leisure_track_lbl_size': 8,
+   'leisure_track_lbl_clr': '0 0 0',
+   'leisure_track_lbl_ol_clr': "255 255 255",
+   'leisure_track_lbl_ol_width': 2,
+
+
 
    ###### highways #######
 
@@ -1185,6 +1196,8 @@ namedstyles = {
       'stream_clr': '153 179 204',
       'canal_clr': '153 179 204',
 
+      'leisure_track_clr': '0 0 0',
+
       'motorway_ol_clr': '186 110 39',
       'trunk_ol_clr': '221 159 17',
       'primary_ol_clr': '193 181 157',
@@ -1214,8 +1227,6 @@ namedstyles = {
          14:"255 255 255"
       },
       'pedestrian_clr': '250 250 245',
-      #'forest_clr': "203 216 195",
-      #'forest_clr': "143 205 135",
       'forest_clr': "177 223 171",
       #'industrial_clr': "209 208 205",
       'industrial_clr': "232 232 232",
@@ -1239,6 +1250,8 @@ namedstyles = {
       'stream_clr': '170 216 249',
       #'canal_clr': '153 179 204',
       'canal_clr': '170 216 249',
+
+      'leisure_track_clr': '0 0 0',
 
       'building_clr': '211 208 199',
       'building_ol_clr': '211 208 199',
@@ -1433,12 +1446,12 @@ namedstyles = {
          where type in (\'forest\',\'wood\',\'pedestrian\',\'cemetery\',\'industrial\',\'commercial\',\
          \'brownfield\',\'residential\',\'school\',\'college\',\'university\',\
          \'military\',\'park\',\'golf_course\',\'hospital\',\'parking\',\'stadium\',\'sports_center\',\
-         \'pitch\') order by area desc) as foo using unique osm_id using srid=OSM_SRID"',
-         12:'"way from (select way, osm_id, name, type from (select way , st_area(way) as area ,osm_id, (case when landuse is not null then landuse else (case when \\\"natural\\\" is not null then \\\"natural\\\" else (case when leisure is not null then leisure else amenity end) end) end) as type, OSM_NAME_COLUMN as name from OSM_SCHEMA.OSM_PREFIX_polygon) as osm2 \
+         \'pitch\',\'leisure_track\') order by area desc) as foo using unique osm_id using srid=OSM_SRID"',
+         12:'"way from (select way, osm_id, name, type from (select way , st_area(way) as area ,osm_id, (case when landuse is not null then landuse else (case when \\\"natural\\\" is not null then \\\"natural\\\" else (case when leisure is not null then leisure else amenity end) end) end) as type, OSM_NAME_COLUMN as name from OSM_PREFIX_polygon) as osm2 \
          where type in (\'forest\',\'wood\',\'pedestrian\',\'cemetery\',\'industrial\',\'commercial\',\
          \'brownfield\',\'residential\',\'school\',\'college\',\'university\',\
          \'military\',\'park\',\'golf_course\',\'hospital\',\'parking\',\'stadium\',\'sports_center\',\
-         \'pitch\') order by area desc) as foo using unique osm_id using srid=OSM_SRID"'
+         \'pitch\',\'leisure_track\') order by area desc) as foo using unique osm_id using srid=OSM_SRID"'
       },
       'roads_data': {
          0: '"way from (select osm_id,way,OSM_NAME_COLUMN as name,ref,highway as type, 0 as tunnel, 0 as bridge from OSM_SCHEMA.OSM_PREFIX_line where highway in (\'motorway\',\'trunk\') order by z_order asc, st_length(way) asc) as foo using unique osm_id using srid=OSM_SRID"',
