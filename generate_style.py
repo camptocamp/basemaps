@@ -175,15 +175,15 @@ style = {
             as foo using unique osm_id using srid=OSM_SRID"',
       6:'"geometry from (select geometry ,osm_id, type, OSM_NAME_COLUMN as name from OSM_SCHEMA.OSM_PREFIX_landusages_gen0)\
             as foo using unique osm_id using srid=OSM_SRID"',
-      9:'"geometry from (select geometry ,osm_id, type, OSM_NAME_COLUMN as name from OSM_SCHEMA.OSM_PREFIX_landusages_gen1 \
-      where type in (\'forest\',\'wood\',\'industrial\',\'commercial\',\'residential\')) as foo using unique osm_id using srid=OSM_SRID"',
-      10:'"geometry from (select geometry ,osm_id, type, OSM_NAME_COLUMN as name from OSM_SCHEMA.OSM_PREFIX_landusages_gen1 \
-      where type in (\'forest\',\'wood\',\'pedestrian\',\'cemetery\',\'industrial\',\'commercial\',\
+      9:'"geometry from (select geometry ,osm_id, type, OSM_NAME_COLUMN as name from OSM_PREFIX_landusages_gen1 \
+      where type in (\'forest\',\'wood\',\'industrial\',\'commercial\',\'recycling\',\'residential\')) as foo using unique osm_id using srid=OSM_SRID"',
+      10:'"geometry from (select geometry ,osm_id, type, OSM_NAME_COLUMN as name from OSM_PREFIX_landusages_gen1 \
+      where type in (\'forest\',\'wood\',\'pedestrian\',\'industrial\',\'recycling\',\'commercial\',\
       \'brownfield\',\'residential\',\'school\',\'college\',\'university\',\
-      \'military\',\'park\',\'golf_course\',\'hospital\',\'parking\',\'stadium\',\'sports_center\',\
-      \'pitch\',\'track\') order by area desc) as foo using unique osm_id using srid=OSM_SRID"',
+      \'military\',\'park\',\'golf_course\',\'hospital\',\'parking\',\
+      \'track\') order by area desc) as foo using unique osm_id using srid=OSM_SRID"',
       12:'"geometry from (select geometry ,osm_id, type, OSM_NAME_COLUMN as name from OSM_PREFIX_landusages \
-      where type in (\'forest\',\'wood\',\'pedestrian\',\'cemetery\',\'industrial\',\'commercial\',\
+      where type in (\'forest\',\'wood\',\'pedestrian\',\'cemetery\',\'industrial\',\'recycling\',\'commercial\',\
       \'brownfield\',\'residential\',\'school\',\'college\',\'university\',\
       \'military\',\'park\',\'golf_course\',\'hospital\',\'parking\',\'stadium\',\'sports_center\',\
       \'pitch\',\'track\') order by area desc) as foo using unique osm_id using\
@@ -240,6 +240,9 @@ style = {
    'education_lbl_ol_clr': "255 255 255",
    'education_lbl_ol_width': 2,
 
+   'display_pitch' : {0:0, 12:1},
+
+   'display_sports_clr' : {0:0, 12:1},
    'sports_clr': '"#71bd85"',
    #'sports_clr': '"#C2D1B2"',
    'display_sports_lbl' : {0:0, 12:1},
@@ -249,6 +252,7 @@ style = {
    'sports_lbl_ol_clr': "255 255 255",
    'sports_lbl_ol_width': 2,
 
+   'display_cemetery_clr': {0:0, 15:1},
    #'cemetery_clr': '"#d1d1d1"',
    'cemetery_clr': '"#a3a3a3"',
    'display_cemetery_lbl' : {0:0, 12:1},
@@ -260,6 +264,7 @@ style = {
 
    'display_forest': 1,
    'forest_clr': '"#C2D1B2"',
+   'display_forest_symbol' : {0:0, 10:1},
    'display_forest_lbl' : {0:0, 12:1},
    'forest_font': "sc",
    'forest_lbl_size': 8,
@@ -1226,31 +1231,36 @@ namedstyles = {
          14:"255 255 255"
       },
       'pedestrian_clr': '250 250 245',
+
       'forest_clr': "177 223 171",
-      #'industrial_clr': "209 208 205",
+      'display_forest_symbol' : {0:0, 10:1},
+
       'industrial_clr': "232 232 232",
-      #'education_clr': "222 210 172",
+
       'education_clr': "245 227 162",
+
       'hospital_clr': "229 198 195",
-      #'residential_clr': "242 239 233",
+
       'residential_clr': " 251 250 246",
-      #'land_clr': "242 239 233",
+
       'land_clr': "251 250 246",
-      #'park_clr': '181 210 156',
-      #'park_clr': '109 184 45',
+
       'park_clr': '177 223 171',
-      #'ocean_clr': '153 179 204',
+
       'ocean_clr': '170 216 249',
-      #'waterarea_clr': '153 179 204',
+
       'waterarea_clr': '170 216 249',
-      #'river_clr': '153 179 204',
+
       'river_clr': '170 216 249',
-      #'stream_clr': '153 179 204',
+
       'stream_clr': '170 216 249',
-      #'canal_clr': '153 179 204',
+
       'canal_clr': '170 216 249',
 
       'leisure_track_clr': '113 189 133',
+
+      'display_cemetery_clr': {0:0, 12:1},
+      'display_sports_clr' : {0:0, 12:1},
 
       'building_clr': '211 208 199',
       'building_ol_clr': '211 208 199',
@@ -1438,16 +1448,16 @@ namedstyles = {
          0:'"way from (select way, osm_id, name, type from (select way, st_area(way) as area, osm_id, (case when landuse is not null then landuse else (case when \\\"natural\\\" is not null then \\\"natural\\\" else (case when leisure is not null then leisure else amenity end) end) end) as type, OSM_NAME_COLUMN as name from OSM_SCHEMA.OSM_PREFIX_polygon) as osm2 \
          where type in (\'forest\',\'wood\',\'residential\')\
          order by area desc) as foo using unique osm_id using srid=OSM_SRID"',
-         6:'"way from (select way, osm_id, name, type from (select way , st_area(way) as area ,osm_id, (case when landuse is not null then landuse else (case when \\\"natural\\\" is not null then \\\"natural\\\" else (case when leisure is not null then leisure else amenity end) end) end) as type, OSM_NAME_COLUMN as name from OSM_SCHEMA.OSM_PREFIX_polygon) as osm2 \
-         where type in (\'forest\',\'wood\',\'industrial\',\'commercial\',\'residential\')\
+         6:'"way from (select way, osm_id, name, type from (select way , st_area(way) as area ,osm_id, (case when landuse is not null then landuse else (case when \\\"natural\\\" is not null then \\\"natural\\\" else (case when leisure is not null then leisure else amenity end) end) end) as type, OSM_NAME_COLUMN as name from OSM_PREFIX_polygon) as osm2 \
+         where type in (\'forest\',\'wood\',\'industrial\',\'recycling\',\'commercial\',\'residential\')\
          order by area desc) as foo using unique osm_id using srid=OSM_SRID"',
-         9:'"way from (select way, osm_id, name, type from (select way, st_area(way) as area ,osm_id, (case when landuse is not null then landuse else (case when \\\"natural\\\" is not null then \\\"natural\\\" else (case when leisure is not null then leisure else amenity end) end) end) as type, OSM_NAME_COLUMN as name from OSM_SCHEMA.OSM_PREFIX_polygon) as osm2 \
-         where type in (\'forest\',\'wood\',\'pedestrian\',\'cemetery\',\'industrial\',\'commercial\',\
+         9:'"way from (select way, osm_id, name, type from (select way, st_area(way) as area ,osm_id, (case when landuse is not null then landuse else (case when \\\"natural\\\" is not null then \\\"natural\\\" else (case when leisure is not null then leisure else amenity end) end) end) as type, OSM_NAME_COLUMN as name from OSM_PREFIX_polygon) as osm2 \
+         where type in (\'forest\',\'wood\',\'pedestrian\',\'industrial\',\'recycling\',\'commercial\',\
          \'brownfield\',\'residential\',\'school\',\'college\',\'university\',\
-         \'military\',\'park\',\'golf_course\',\'hospital\',\'parking\',\'stadium\',\'sports_center\',\
-         \'pitch\',\'track\') order by area desc) as foo using unique osm_id using srid=OSM_SRID"',
+         \'military\',\'park\',\'golf_course\',\'hospital\',\'parking\',\
+         \'track\') order by area desc) as foo using unique osm_id using srid=OSM_SRID"',
          12:'"way from (select way, osm_id, name, type from (select way , st_area(way) as area ,osm_id, (case when landuse is not null then landuse else (case when \\\"natural\\\" is not null then \\\"natural\\\" else (case when leisure is not null then leisure else amenity end) end) end) as type, OSM_NAME_COLUMN as name from OSM_PREFIX_polygon) as osm2 \
-         where type in (\'forest\',\'wood\',\'pedestrian\',\'cemetery\',\'industrial\',\'commercial\',\
+         where type in (\'forest\',\'wood\',\'pedestrian\',\'cemetery\',\'industrial\',\'recycling\',\'commercial\',\
          \'brownfield\',\'residential\',\'school\',\'college\',\'university\',\
          \'military\',\'park\',\'golf_course\',\'hospital\',\'parking\',\'stadium\',\'sports_center\',\
          \'pitch\',\'track\') order by area desc) as foo using unique osm_id using srid=OSM_SRID"'
