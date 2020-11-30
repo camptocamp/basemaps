@@ -25,12 +25,14 @@ LAYER
        STYLE
           COLOR _forest_clr
        END
+#if _display_forest_symbol == 1
        STYLE
           SYMBOL "foret"
           SIZE 20
           OPACITY 10
           GAP 70
        END
+#endif
 #if _display_forest_lbl==1
       LABEL
          TYPE TRUETYPE
@@ -125,7 +127,7 @@ LAYER
         END
 #endif
     END
-#endif
+
 #if _display_cemetery==1
     CLASS
         EXPRESSION 'cemetery'
@@ -151,6 +153,7 @@ LAYER
 #endif
     END
 #endif
+
    CLASS
       EXPRESSION 'pedestrian'
       STYLE
@@ -195,8 +198,7 @@ LAYER
         END
 #endif
     END
-#endif
-#if _display_education==1
+
     CLASS
         EXPRESSION {school,college,university}
         STYLE
@@ -220,8 +222,7 @@ LAYER
         END
 #endif
     END
-#endif
-#if _display_sports==1
+
     CLASS
       EXPRESSION {sports_center,stadium}
       STYLE
@@ -245,6 +246,8 @@ LAYER
       END
 #endif
     END
+
+#if _display_pitch==1
     CLASS
       NAME "pitch"
       EXPRESSION "pitch"
@@ -269,6 +272,7 @@ LAYER
       END
 #endif
     END
+
     CLASS
       NAME "leisure_track"
       EXPRESSION "track"
@@ -294,7 +298,10 @@ LAYER
 #endif
     END
 
-END ##END LAYER
+#endif
+END
+
+
 
 #if _display_transport_areas == 1
 LAYER
