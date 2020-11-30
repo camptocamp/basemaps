@@ -8,9 +8,31 @@ SYMBOLSET
   END
 
   SYMBOL
-    name "soccer"
+    NAME "soccer"
     TYPE SVG
     IMAGE symbols/sports-soccer.svg
   END
 
+  SYMBOL
+    NAME "soccer_mag"
+    TYPE PIXMAP
+    IMAGE symbols/soccer.png
+  END
+
+  SYMBOL
+    NAME "foret"
+    TYPE PIXMAP
+    IMAGE "symbols/arbre.png"
+  END #SYMBOL
+
+  SYMBOL
+    NAME "foret_svg"
+    TYPE SVG
+    IMAGE "symbols/arbre.svg"
+  END #SYMBOL
+
+
+
+
 END
+

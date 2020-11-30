@@ -24,6 +24,12 @@ LAYER
        STYLE
           COLOR _forest_clr
        END
+       STYLE
+          SYMBOL "foret"
+          SIZE 20
+          OPACITY 10
+          GAP 70
+       END
 #if _display_forest_lbl==1
       LABEL
          TYPE TRUETYPE
@@ -66,7 +72,7 @@ LAYER
    END
 #endif
    CLASS
-     EXPRESSION {industrial,commercial,parking}
+     EXPRESSION {industrial,commercial,parking,recycling}
      STYLE
        COLOR _industrial_clr
        OUTLINECOLOR _industrial_ol_clr
