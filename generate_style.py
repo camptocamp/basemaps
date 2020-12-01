@@ -176,14 +176,14 @@ style = {
       6:'"geometry from (select geometry ,osm_id, type, OSM_NAME_COLUMN as name from OSM_SCHEMA.OSM_PREFIX_landusages_gen0)\
             as foo using unique osm_id using srid=OSM_SRID"',
       9:'"geometry from (select geometry ,osm_id, type, OSM_NAME_COLUMN as name from OSM_PREFIX_landusages_gen1 \
-      where type in (\'forest\',\'wood\',\'industrial\',\'commercial\',\'recycling\',\'residential\')) as foo using unique osm_id using srid=OSM_SRID"',
+      where type in (\'grass\',\'forest\',\'wood\',\'industrial\',\'commercial\',\'recycling\',\'residential\')) as foo using unique osm_id using srid=OSM_SRID"',
       10:'"geometry from (select geometry ,osm_id, type, OSM_NAME_COLUMN as name from OSM_PREFIX_landusages_gen1 \
-      where type in (\'forest\',\'wood\',\'pedestrian\',\'industrial\',\'recycling\',\'commercial\',\
+      where type in (\'grass\',\'forest\',\'wood\',\'pedestrian\',\'industrial\',\'recycling\',\'commercial\',\
       \'brownfield\',\'residential\',\'school\',\'college\',\'university\',\
       \'military\',\'park\',\'golf_course\',\'hospital\',\'parking\',\
       \'track\') order by area desc) as foo using unique osm_id using srid=OSM_SRID"',
       12:'"geometry from (select geometry ,osm_id, type, OSM_NAME_COLUMN as name from OSM_PREFIX_landusages \
-      where type in (\'forest\',\'wood\',\'pedestrian\',\'cemetery\',\'industrial\',\'recycling\',\'commercial\',\
+      where type in (\'grass\',\'forest\',\'wood\',\'pedestrian\',\'cemetery\',\'industrial\',\'recycling\',\'commercial\',\
       \'brownfield\',\'residential\',\'school\',\'college\',\'university\',\
       \'military\',\'park\',\'golf_course\',\'hospital\',\'parking\',\'stadium\',\'sports_center\',\
       \'pitch\',\'track\') order by area desc) as foo using unique osm_id using\
@@ -1246,21 +1246,19 @@ namedstyles = {
       'land_clr': "251 250 246",
 
       'park_clr': '177 223 171',
+      'meadow_clr': '177 223 171',
+      'grass_clr': '177 223 171',
 
       'ocean_clr': '170 216 249',
-
       'waterarea_clr': '170 216 249',
-
       'river_clr': '170 216 249',
-
       'stream_clr': '170 216 249',
-
       'canal_clr': '170 216 249',
 
       'leisure_track_clr': '113 189 133',
 
-      'display_cemetery_clr': {0:0, 12:1},
-      'display_sports_clr' : {0:0, 12:1},
+      'display_cemetery_clr': {0:0, 15:1},
+      #'display_sports_clr' : {0:0, 15:1},
 
       'building_clr': '211 208 199',
       'building_ol_clr': '211 208 199',
@@ -1452,12 +1450,12 @@ namedstyles = {
          where type in (\'forest\',\'wood\',\'industrial\',\'recycling\',\'commercial\',\'residential\')\
          order by area desc) as foo using unique osm_id using srid=OSM_SRID"',
          9:'"way from (select way, osm_id, name, type from (select way, st_area(way) as area ,osm_id, (case when landuse is not null then landuse else (case when \\\"natural\\\" is not null then \\\"natural\\\" else (case when leisure is not null then leisure else amenity end) end) end) as type, OSM_NAME_COLUMN as name from OSM_PREFIX_polygon) as osm2 \
-         where type in (\'forest\',\'wood\',\'pedestrian\',\'industrial\',\'recycling\',\'commercial\',\
+         where type in (\'grass\',\'forest\',\'wood\',\'pedestrian\',\'industrial\',\'recycling\',\'commercial\',\
          \'brownfield\',\'residential\',\'school\',\'college\',\'university\',\
          \'military\',\'park\',\'golf_course\',\'hospital\',\'parking\',\
          \'track\') order by area desc) as foo using unique osm_id using srid=OSM_SRID"',
          12:'"way from (select way, osm_id, name, type from (select way , st_area(way) as area ,osm_id, (case when landuse is not null then landuse else (case when \\\"natural\\\" is not null then \\\"natural\\\" else (case when leisure is not null then leisure else amenity end) end) end) as type, OSM_NAME_COLUMN as name from OSM_PREFIX_polygon) as osm2 \
-         where type in (\'forest\',\'wood\',\'pedestrian\',\'cemetery\',\'industrial\',\'recycling\',\'commercial\',\
+         where type in (\'grass\',\'forest\',\'wood\',\'pedestrian\',\'cemetery\',\'industrial\',\'recycling\',\'commercial\',\
          \'brownfield\',\'residential\',\'school\',\'college\',\'university\',\
          \'military\',\'park\',\'golf_course\',\'hospital\',\'parking\',\'stadium\',\'sports_center\',\
          \'pitch\',\'track\') order by area desc) as foo using unique osm_id using srid=OSM_SRID"'

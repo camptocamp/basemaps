@@ -29,7 +29,6 @@ LAYER
        STYLE
           SYMBOL "foret"
           SIZE 20
-          OPACITY 10
           GAP 70
        END
 #endif
@@ -104,7 +103,7 @@ LAYER
 #endif
 #if _display_park==1
     CLASS
-        EXPRESSION {park,golf_course}
+        EXPRESSION {park,golf_course,meadow,grass}
         STYLE
             COLOR _park_clr
         END
