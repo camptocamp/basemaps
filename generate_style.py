@@ -246,10 +246,10 @@ vars= {
    'sports_lbl_ol_clr': "255 255 255",
    'sports_lbl_ol_width': 2,
 
-   'display_cemetery_clr': {0:0, 15:1},
    #'cemetery_clr': '"#d1d1d1"',
+   'display_cemetery' : {0:0, 16:1},
    'cemetery_clr': '"#a3a3a3"',
-   'display_cemetery_lbl' : {0:0, 12:1},
+   'display_cemetery_lbl' : {0:0, 14:1},
    'cemetery_font': "sc",
    'cemetery_lbl_size': 8,
    'cemetery_lbl_clr': '0 0 0',
@@ -257,7 +257,6 @@ vars= {
    'cemetery_lbl_ol_width': 2,
 
    'forest_clr': '"#C2D1B2"',
-   'display_forest_symbol' : {0:0, 10:1},
    'display_forest_lbl' : {0:0, 12:1},
    'forest_font': "sc",
    'forest_lbl_size': 8,
@@ -1221,7 +1220,7 @@ styles = {
       'pedestrian_clr': '250 250 245',
 
       'forest_clr': "177 223 171",
-      'display_forest_symbol' : {0:0, 10:1},
+      'display_forest_symbol' : {0:0, 15:1},
 
       'industrial_clr': "232 232 232",
 
@@ -1244,9 +1243,6 @@ styles = {
       'canal_clr': '170 216 249',
 
       'leisure_track_clr': '113 189 133',
-
-      'display_cemetery_clr': {0:0, 15:1},
-      #'display_sports_clr' : {0:0, 15:1},
 
       'building_clr': '211 208 199',
       'building_ol_clr': '211 208 199',
