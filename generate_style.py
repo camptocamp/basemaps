@@ -181,12 +181,12 @@ style = {
       where type in (\'grass\',\'forest\',\'wood\',\'pedestrian\',\'cemetery\',\'industrial\',\'recycling\',\'commercial\',\
       \'brownfield\',\'residential\',\'school\',\'college\',\'university\',\
       \'military\',\'park\',\'golf_course\',\'hospital\',\'parking\',\'stadium\',\'sports_center\',\
-      \'pitch\',\'track\') order by area desc) as foo using unique osm_id using srid=OSM_SRID"',
+      \'pitch\',\'track\',\'swimming\',\'soccer\') order by area desc) as foo using unique osm_id using srid=OSM_SRID"',
       12:'"geometry from (select geometry ,osm_id, type, OSM_NAME_COLUMN as name from OSM_PREFIX_landusages \
       where type in (\'grass\',\'forest\',\'wood\',\'pedestrian\',\'cemetery\',\'industrial\',\'recycling\',\'commercial\',\
       \'brownfield\',\'residential\',\'school\',\'college\',\'university\',\
       \'military\',\'park\',\'golf_course\',\'hospital\',\'parking\',\'stadium\',\'sports_center\',\
-      \'pitch\',\'track\') order by area desc) as foo using unique osm_id using\
+      \'pitch\',\'track\',\'swimming\',\'soccer\') order by area desc) as foo using unique osm_id using\
       srid=OSM_SRID"'
       },
 
@@ -233,29 +233,26 @@ style = {
 
    'display_education': 1,
    'education_clr': '"#DED1AB"',
-   'display_education_lbl' : {0:0, 12:1},
+   'display_education_lbl' : {0:0, 16:1},
    'education_font': "sc",
    'education_lbl_size': 8,
    'education_lbl_clr': '0 0 0',
    'education_lbl_ol_clr': "255 255 255",
    'education_lbl_ol_width': 2,
 
-   'display_pitch' : {0:0, 12:1},
-
-   'display_sports_clr' : {0:0, 12:1},
-   'sports_clr': '"#71bd85"',
-   #'sports_clr': '"#C2D1B2"',
-   'display_sports_lbl' : {0:0, 12:1},
-   'sports_font': "sc",
-   'sports_lbl_size': 8,
-   'sports_lbl_clr': '0 0 0',
-   'sports_lbl_ol_clr': "255 255 255",
-   'sports_lbl_ol_width': 2,
+   ## 'display_sports' : {0:0, 15:1},
+   ## 'sports_clr': '"#71bd85"',
+   ## 'display_sports_lbl' : {0:0, 16:1},
+   ## 'sports_font': "sc",
+   ## 'sports_lbl_size': 8,
+   ## 'sports_lbl_clr': '0 0 0',
+   ## 'sports_lbl_ol_clr': "255 255 255",
+   ## 'sports_lbl_ol_width': 2,
 
    #'cemetery_clr': '"#d1d1d1"',
-   'display_cemetery' : {0:0, 16:1},
+   'display_cemetery' : {0:0, 15:1},
    'cemetery_clr': '"#a3a3a3"',
-   'display_cemetery_lbl' : {0:0, 14:1},
+   'display_cemetery_lbl' : {0:0, 16:1},
    'cemetery_font': "sc",
    'cemetery_lbl_size': 8,
    'cemetery_lbl_clr': '0 0 0',
@@ -287,6 +284,24 @@ style = {
    'leisure_track_lbl_clr': '0 0 0',
    'leisure_track_lbl_ol_clr': "255 255 255",
    'leisure_track_lbl_ol_width': 2,
+
+   'leisure_swimming_clr': '"#dffce2"',
+   'display_leisure_swimming_lbl' : {0:0, 9:1},
+   'leisure_swimming_font': "sc",
+   'leisure_swimming_lbl_size': 8,
+   'leisure_swimming_lbl_clr': '0 0 0',
+   'leisure_swimming_lbl_ol_clr': "255 255 255",
+   'leisure_swimming_lbl_ol_width': 2,
+
+   'sport_soccer_clr': '"#dffce2"',
+   'display_sport_soccer_lbl' : {0:0, 9:1},
+   'sport_soccer_font': "sc",
+   'sport_soccer_lbl_size': 8,
+   'sport_soccer_lbl_clr': '0 0 0',
+   'sport_soccer_lbl_ol_clr': "255 255 255",
+   'sport_soccer_lbl_ol_width': 2,
+
+
 
 
 
@@ -1256,16 +1271,11 @@ namedstyles = {
 
       'leisure_track_clr': '113 189 133',
 
+      'sport_soccer_clr': '255 0 0',
+      'display_sport_soccer_symbol':{0:0, 12:1},
+
       'building_clr': '211 208 199',
       'building_ol_clr': '211 208 199',
-
-      'motorway_ol_clr': '186 110 39',
-      'trunk_ol_clr': '221 159 17',
-      'primary_ol_clr': '193 181 157',
-      'secondary_ol_clr': '193 181 157',
-      'tertiary_ol_clr': '193 181 157',
-      'other_ol_clr': '193 181 157',
-      'pedestrian_ol_clr': '193 181 157',
       'display_buildings':{ 0:0, 15:1}
    },
    'google':{
@@ -1449,12 +1459,12 @@ namedstyles = {
          where type in (\'grass\',\'forest\',\'wood\',\'pedestrian\',\'cemetery\',\'industrial\',\'recycling\',\'commercial\',\
          \'brownfield\',\'residential\',\'school\',\'college\',\'university\',\
          \'military\',\'park\',\'golf_course\',\'hospital\',\'parking\',\'stadium\',\'sports_center\',\
-         \'pitch\',\'track\') order by area desc) as foo using unique osm_id using srid=OSM_SRID"',
+         \'pitch\',\'track\',\'swimming\',\'soccer\') order by area desc) as foo using unique osm_id using srid=OSM_SRID"',
          12:'"way from (select way, osm_id, name, type from (select way , st_area(way) as area ,osm_id, (case when landuse is not null then landuse else (case when \\\"natural\\\" is not null then \\\"natural\\\" else (case when leisure is not null then leisure else amenity end) end) end) as type, OSM_NAME_COLUMN as name from OSM_PREFIX_polygon) as osm2 \
          where type in (\'grass\',\'forest\',\'wood\',\'pedestrian\',\'cemetery\',\'industrial\',\'recycling\',\'commercial\',\
          \'brownfield\',\'residential\',\'school\',\'college\',\'university\',\
          \'military\',\'park\',\'golf_course\',\'hospital\',\'parking\',\'stadium\',\'sports_center\',\
-         \'pitch\',\'track\') order by area desc) as foo using unique osm_id using srid=OSM_SRID"'
+         \'pitch\',\'track\',\'swimming\',\'soccer\') order by area desc) as foo using unique osm_id using srid=OSM_SRID"'
       },
       'roads_data': {
          0: '"way from (select osm_id,way,OSM_NAME_COLUMN as name,ref,highway as type, 0 as tunnel, 0 as bridge from OSM_SCHEMA.OSM_PREFIX_line where highway in (\'motorway\',\'trunk\') order by z_order asc, st_length(way) asc) as foo using unique osm_id using srid=OSM_SRID"',

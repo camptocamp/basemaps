@@ -323,6 +323,29 @@ landusages = Polygons(
             'common',
             'nature_reserve',
             'track',
+            'swimming_pool',
+        ),
+        'sport': (
+            'athletics',
+            'baseball',
+            'basketball',
+            'boules',
+            'cycling',
+            'golf',
+            'horse_ricing',
+            'ice_skating',
+            'judo',
+            'karting',
+            'motocross',
+            'multi',
+            'roller_skating',
+            'rugby_union',
+            'running',
+            'shooting',
+            'skateboard',
+            'soccer',
+            'swimming',
+            'tennis',
         ),
         'natural': (
             'wood',
@@ -344,6 +367,7 @@ landusages = Polygons(
             'theatre',
             'place_of_worship',
             'hospital',
+            'recycling',
         ),
 })
 
@@ -359,6 +383,7 @@ amenities = Points(
             'fire_station',
             'police',
             'townhall',
+            'recycling',
         ),
 })
 
