@@ -246,24 +246,24 @@ LAYER
       END
 #endif
     END
+#endif
 
-#if _display_pitch==1
     CLASS
-      NAME "pitch"
-      EXPRESSION "pitch"
+      NAME "leisure_track"
+      EXPRESSION "track"
       STYLE
-          COLOR _sports_clr
+          COLOR _leisure_track_clr
       END
-#if _display_sports_lbl==1
+#if _display_leisure_track_lbl==1
       LABEL
         TYPE TRUETYPE
         PARTIALS FALSE
-        FONT _sports_font
-        SIZE _sports_lbl_size
-        COLOR _sports_lbl_clr
-        OUTLINECOLOR _sports_lbl_ol_clr
+        FONT _leisure_track_font
+        SIZE _leisure_track_lbl_size
+        COLOR _leisure_track_lbl_clr
+        OUTLINECOLOR _leisure_track_lbl_ol_clr
         ENCODING "utf-8"
-        OUTLINEWIDTH _sports_lbl_ol_width
+        OUTLINEWIDTH _leisure_track_lbl_ol_width
         PRIORITY 1
         WRAP ' '
         MAXLENGTH 6

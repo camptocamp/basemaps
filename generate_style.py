@@ -1227,24 +1227,32 @@ namedstyles = {
    },
    'cagc_2':{
       'motorway_clr': "253 146 58",
+      'motorway_ol_clr': '186 110 39',
       'trunk_clr': "255 195 69",
+      'trunk_ol_clr': '221 159 17',
       'primary_clr': {
          0:'193 181 157',
          9:"255 253 139"
       },
+      'primary_ol_clr': '193 181 157',
       'secondary_clr': {
          0:'193 181 157',
          10:"255 253 139"
       },
+      'secondary_ol_clr': '193 181 157',
       'tertiary_clr': {
          0:'193 181 157',
          12:"255 253 139"
       },
+      'tertiary_ol_clr': '193 181 157',
       'other_clr': {
          0:'193 181 157',
          14:"255 255 255"
       },
+      'other_ol_clr': '193 181 157',
+
       'pedestrian_clr': '250 250 245',
+      'pedestrian_ol_clr': '193 181 157',
 
       'forest_clr': "177 223 171",
       'display_forest_symbol' : {0:0, 15:1},
