@@ -26,11 +26,10 @@ SYMBOLSET
   END #SYMBOL
 
   SYMBOL
-    NAME "foret_svg"
-    TYPE SVG
-    IMAGE "symbols/arbre.svg"
+    NAME "foot"
+    TYPE PIXMAP
+    IMAGE "symbols/foot.png"
   END #SYMBOL
-
 
 
 
