@@ -73,20 +73,46 @@ LAYER
    END
 #endif
    CLASS
-     EXPRESSION {industrial,commercial,parking,recycling}
+     EXPRESSION {industrial,commercial,recycling}
      STYLE
        COLOR _industrial_clr
        OUTLINECOLOR _industrial_ol_clr
        OUTLINEWIDTH _industrial_ol_width
      END
-#if _display_industrial_lbl==1
+## #if _display_industrial_lbl==1
+##      LABEL
+##        ENCODING "utf-8"
+##        TYPE TRUETYPE
+##        FONT _industrial_font
+##        SIZE _industrial_lbl_size
+##        COLOR _industrial_lbl_clr
+##        OUTLINECOLOR _industrial_lbl_ol_clr
+##        OUTLINEWIDTH _pedestrian_lbl_ol_width
+##        PRIORITY 2
+##        WRAP ' '
+##        MAXLENGTH 6
+##        ALIGN CENTER
+##        MINFEATURESIZE AUTO
+##        PARTIALS FALSE
+##      END
+## #endif
+   END
+   CLASS
+     EXPRESSION 'parking'
+     STYLE
+       COLOR _parking_clr
+       OUTLINECOLOR _parking_ol_clr
+       OUTLINEWIDTH _parking_ol_width
+     END
+#if _display_parking_lbl==1
      LABEL
        ENCODING "utf-8"
        TYPE TRUETYPE
-       FONT _industrial_font
-       SIZE _industrial_lbl_size
-       COLOR _industrial_lbl_clr
-       OUTLINECOLOR _industrial_lbl_ol_clr
+       TEXT _parking_text
+       FONT _parking_font
+       SIZE _parking_lbl_size
+       COLOR _parking_lbl_clr
+       OUTLINECOLOR _parking_lbl_ol_clr
        OUTLINEWIDTH _pedestrian_lbl_ol_width
        PRIORITY 2
        WRAP ' '
