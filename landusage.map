@@ -19,7 +19,6 @@ LAYER
     MINSCALEDENOM _minscale
     CLASSITEM "type"
     LABELITEM "name"
-#if _display_forest==1
     CLASS
        EXPRESSION {forest,wood}
        STYLE
@@ -126,10 +125,8 @@ LAYER
      END
 #endif
     END
-#endif
-#if _display_park==1
     CLASS
-        EXPRESSION {park,golf_course,meadow,grass}
+        EXPRESSION {park,golf_course,meadow,grass,recreation_ground}
         STYLE
             COLOR _park_clr
         END
@@ -159,6 +156,14 @@ LAYER
         STYLE
           COLOR _cemetery_clr
         END
+#if _display_cemetery_symbol == 1
+      STYLE
+          SYMBOL "cimetiere"
+          COLOR 0 0 0
+          SIZE 10
+          GAP 30
+      END
+#endif
 #if _display_cemetery_lbl==1
         LABEL
           TYPE TRUETYPE
@@ -239,7 +244,8 @@ LAYER
           COLOR _education_lbl_clr
           OUTLINECOLOR _education_lbl_ol_clr
           OUTLINEWIDTH _education_lbl_ol_width
-          PRIORITY 1
+          PRIORITY 10
+          FORCE true
           WRAP ' '
           MAXLENGTH 6
           ALIGN CENTER
@@ -247,6 +253,62 @@ LAYER
         END
 #endif
     END
+
+    CLASS
+      NAME "shop_supermarket"
+      EXPRESSION "supermarket"
+      STYLE
+          COLOR _shop_supermarket_clr
+      END
+## #if _shop_supermarket_lbl==1
+##       LABEL
+##         TYPE TRUETYPE
+##         PARTIALS FALSE
+##         FONT _shop_supermarket_font
+##         SIZE _shop_supermarket_lbl_size
+##         COLOR _shop_supermarket_lbl_clr
+##         OUTLINECOLOR _shop_supermarket_lbl_ol_clr
+##         ENCODING "utf-8"
+##         OUTLINEWIDTH _shop_supermarket_lbl_ol_width
+##         PRIORITY 1
+##         WRAP ' '
+##         MAXLENGTH 6
+##         ALIGN CENTER
+##         MINFEATURESIZE AUTO
+##       END
+## #endif
+    END
+
+    CLASS
+      NAME "tourism_camp_site"
+      EXPRESSION "camp_site"
+      STYLE
+          COLOR _tourism_camp_site_clr
+      END
+#if _tourism_camp_site_lbl==1
+      LABEL
+        TYPE TRUETYPE
+        PARTIALS FALSE
+        TEXT _tourism_camp_site_text
+        FONT _tourism_camp_site_font
+        SIZE _tourism_camp_site_lbl_size
+        COLOR _tourism_camp_site_lbl_clr
+        OUTLINECOLOR _tourism_camp_site_lbl_ol_clr
+        ENCODING "utf-8"
+        OUTLINEWIDTH _tourism_camp_site_lbl_ol_width
+        PRIORITY 1
+        WRAP ' '
+        MAXLENGTH 6
+        ALIGN CENTER
+        MINFEATURESIZE AUTO
+      END
+#endif
+    END
+
+
+
+######## SPORTS ########
+
 
 #if _display_sports==1
     CLASS
@@ -274,6 +336,8 @@ LAYER
     END
 #endif
 
+
+#if _display_leisure_track==1
     CLASS
       NAME "leisure_track"
       EXPRESSION "track"
@@ -298,7 +362,9 @@ LAYER
       END
 #endif
     END
+#endif
 
+#if _display_leisure_swimming==1
     CLASS
       NAME "leisure_swimming"
       EXPRESSION "swimming"
@@ -323,21 +389,25 @@ LAYER
       END
 #endif
     END
+#endif
 
+#if _display_sport_soccer==1
     CLASS
       NAME "sport_soccer"
       EXPRESSION "soccer"
       STYLE
           COLOR _sport_soccer_clr
+          OUTLINECOLOR _sport_soccer_ol_clr
+          OUTLINEWIDTH _sport_soccer_ol_width
       END
-## #if _display_sport_soccer_symbol == 1
-##       STYLE
-##           SYMBOL "foot"
-##           #ANGLE AUTO
-##           SIZE 5
-##           #GAP 70
-##       END
-## #endif
+#if _display_sport_soccer_symbol == 1
+      STYLE
+          SYMBOL "foot"
+          SIZE 35
+          INITIALGAP 10
+          GAP 60
+      END
+#endif
 #if _display_sport_soccer_lbl==1
       LABEL
         TYPE TRUETYPE
@@ -356,7 +426,191 @@ LAYER
       END
 #endif
     END
+#endif
 
+#if _display_sport_tennis==1
+    CLASS
+      NAME "sport_tennis"
+      EXPRESSION "tennis"
+      STYLE
+          COLOR _sport_tennis_clr
+          OUTLINECOLOR _sport_tennis_ol_clr
+          OUTLINEWIDTH _sport_tennis_ol_width
+      END
+#if _display_sport_tennis_symbol == 1
+      STYLE
+          SYMBOL "tennis"
+          SIZE 35
+          INITIALGAP 15
+          GAP 50
+      END
+#endif
+#if _display_sport_tennis_lbl==1
+      LABEL
+        TYPE TRUETYPE
+        PARTIALS FALSE
+        FONT _sport_tennis_font
+        SIZE _sport_tennis_lbl_size
+        COLOR _sport_tennis_lbl_clr
+        OUTLINECOLOR _sport_tennis_lbl_ol_clr
+        ENCODING "utf-8"
+        OUTLINEWIDTH _sport_tennis_lbl_ol_width
+        PRIORITY 1
+        WRAP ' '
+        MAXLENGTH 6
+        ALIGN CENTER
+        MINFEATURESIZE AUTO
+      END
+#endif
+    END
+#endif
+
+#if _display_sport_multi==1
+    CLASS
+      NAME "sport_multi"
+      EXPRESSION "multi"
+      STYLE
+          COLOR _sport_multi_clr
+          OUTLINECOLOR _sport_multi_ol_clr
+          OUTLINEWIDTH _sport_multi_ol_width
+     END
+## #if _display_sport_multi_symbol == 1
+##       STYLE
+##           SYMBOL "multi"
+##           SIZE 25
+##           GAP 60
+##       END
+## #endif
+#if _display_sport_multi_lbl==1
+      LABEL
+        TYPE TRUETYPE
+        PARTIALS FALSE
+        FONT _sport_multi_font
+        SIZE _sport_multi_lbl_size
+        COLOR _sport_multi_lbl_clr
+        OUTLINECOLOR _sport_multi_lbl_ol_clr
+        ENCODING "utf-8"
+        OUTLINEWIDTH _sport_multi_lbl_ol_width
+        PRIORITY 1
+        WRAP ' '
+        MAXLENGTH 6
+        ALIGN CENTER
+        MINFEATURESIZE AUTO
+      END
+#endif
+    END
+#endif
+
+#if _display_sport_baseball==1
+    CLASS
+      NAME "sport_baseball"
+      EXPRESSION "baseball"
+      STYLE
+          COLOR _sport_baseball_clr
+          OUTLINECOLOR _sport_baseball_ol_clr
+          OUTLINEWIDTH _sport_baseball_ol_width
+      END
+#if _display_sport_baseball_symbol == 1
+      STYLE
+          SYMBOL "baseball"
+          SIZE 35
+          INITIALGAP 10
+          GAP 60
+      END
+#endif
+#if _display_sport_baseball_lbl==1
+      LABEL
+        TYPE TRUETYPE
+        PARTIALS FALSE
+        FONT _sport_baseball_font
+        SIZE _sport_baseball_lbl_size
+        COLOR _sport_baseball_lbl_clr
+        OUTLINECOLOR _sport_baseball_lbl_ol_clr
+        ENCODING "utf-8"
+        OUTLINEWIDTH _sport_baseball_lbl_ol_width
+        PRIORITY 1
+        WRAP ' '
+        MAXLENGTH 6
+        ALIGN CENTER
+        MINFEATURESIZE AUTO
+      END
+#endif
+    END
+#endif
+
+#if _display_sport_skateboard==1
+    CLASS
+      NAME "sport_skateboard"
+      EXPRESSION "skateboard"
+      STYLE
+          COLOR _sport_skateboard_clr
+          OUTLINECOLOR _sport_skateboard_ol_clr
+          OUTLINEWIDTH _sport_skateboard_ol_width
+      END
+#if _display_sport_skateboard_symbol == 1
+      STYLE
+          SYMBOL "skateboard"
+          SIZE 35
+          INITIALGAP 10
+          GAP 60
+      END
+#endif
+#if _display_sport_skateboard_lbl==1
+      LABEL
+        TYPE TRUETYPE
+        PARTIALS FALSE
+        FONT _sport_skateboard_font
+        SIZE _sport_skateboard_lbl_size
+        COLOR _sport_skateboard_lbl_clr
+        OUTLINECOLOR _sport_skateboard_lbl_ol_clr
+        ENCODING "utf-8"
+        OUTLINEWIDTH _sport_skateboard_lbl_ol_width
+        PRIORITY 1
+        WRAP ' '
+        MAXLENGTH 6
+        ALIGN CENTER
+        MINFEATURESIZE AUTO
+      END
+#endif
+    END
+#endif
+
+#if _display_sport_rugby==1
+    CLASS
+      NAME "sport_rugby"
+      EXPRESSION "rugby_union"
+      STYLE
+          COLOR _sport_rugby_clr
+          OUTLINECOLOR _sport_rugby_ol_clr
+          OUTLINEWIDTH _sport_rugby_ol_width
+      END
+#if _display_sport_rugby_symbol == 1
+      STYLE
+          SYMBOL "rugby"
+          SIZE 35
+          INITIALGAP 10
+          GAP 60
+      END
+#endif
+#if _display_sport_rugby_lbl==1
+      LABEL
+        TYPE TRUETYPE
+        PARTIALS FALSE
+        FONT _sport_rugby_font
+        SIZE _sport_rugby_lbl_size
+        COLOR _sport_rugby_lbl_clr
+        OUTLINECOLOR _sport_rugby_lbl_ol_clr
+        ENCODING "utf-8"
+        OUTLINEWIDTH _sport_rugby_lbl_ol_width
+        PRIORITY 1
+        WRAP ' '
+        MAXLENGTH 6
+        ALIGN CENTER
+        MINFEATURESIZE AUTO
+      END
+#endif
+    END
+#endif
 
 
 END ##END LAYER
