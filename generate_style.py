@@ -176,17 +176,17 @@ style = {
       6:'"geometry from (select geometry ,osm_id, type, OSM_NAME_COLUMN as name from OSM_SCHEMA.OSM_PREFIX_landusages_gen0)\
             as foo using unique osm_id using srid=OSM_SRID"',
       9:'"geometry from (select geometry ,osm_id, type, OSM_NAME_COLUMN as name from OSM_PREFIX_landusages_gen1 \
-      where type in (\'grass\',\'forest\',\'wood\',\'industrial\',\'commercial\',\'recycling\',\'residential\')) as foo using unique osm_id using srid=OSM_SRID"',
+      where type in (\'grass\',\'forest\',\'wood\',\'industrial\',\'commercial\',\'recycling\',\'residential\',\'supermarket\',\'camp_site\')) as foo using unique osm_id using srid=OSM_SRID"',
       10:'"geometry from (select geometry ,osm_id, type, OSM_NAME_COLUMN as name from OSM_PREFIX_landusages_gen1 \
       where type in (\'grass\',\'forest\',\'wood\',\'pedestrian\',\'cemetery\',\'industrial\',\'recycling\',\'commercial\',\
-      \'brownfield\',\'residential\',\'school\',\'college\',\'university\',\
-      \'military\',\'park\',\'golf_course\',\'hospital\',\'parking\',\'stadium\',\'sports_center\',\
-      \'pitch\',\'track\',\'swimming\',\'soccer\') order by area desc) as foo using unique osm_id using srid=OSM_SRID"',
+      \'brownfield\',\'residential\',\'supermarket\',\'camp_site\',\'school\',\'college\',\'university\',\
+      \'military\',\'park\',\'golf_course\',\'hospital\',\'parking\',\'stadium\',\'sports\',\
+      \'pitch\',\'track\',\'swimming\',\'soccer\',\'tennis\',\'multi\',\'athletics\',\'baseball\',\'basketball\',\'boules\',\'cycling\',\'golf\',\'horse_ricing\',\'ice_skating\',\'judo\',\'karting\',\'motocross\',\'roller_skating\',\'rugby_union\',\'running\',\'shooting\',\'skateboard\') order by area desc) as foo using unique osm_id using srid=OSM_SRID"',
       12:'"geometry from (select geometry ,osm_id, type, OSM_NAME_COLUMN as name from OSM_PREFIX_landusages \
       where type in (\'grass\',\'forest\',\'wood\',\'pedestrian\',\'cemetery\',\'industrial\',\'recycling\',\'commercial\',\
-      \'brownfield\',\'residential\',\'school\',\'college\',\'university\',\
-      \'military\',\'park\',\'golf_course\',\'hospital\',\'parking\',\'stadium\',\'sports_center\',\
-      \'pitch\',\'track\',\'swimming\',\'soccer\') order by area desc) as foo using unique osm_id using\
+      \'brownfield\',\'residential\',\'supermarket\',\'camp_site\',\'school\',\'college\',\'university\',\
+      \'military\',\'park\',\'golf_course\',\'hospital\',\'parking\',\'stadium\',\'sports\',\
+      \'pitch\',\'track\',\'swimming\',\'soccer\',\'tennis\',\'multi\',\'athletics\',\'baseball\',\'basketball\',\'boules\',\'cycling\',\'golf\',\'horse_ricing\',\'ice_skating\',\'judo\',\'karting\',\'motocross\',\'roller_skating\',\'rugby_union\',\'running\',\'shooting\',\'skateboard\') order by area desc) as foo using unique osm_id using\
       srid=OSM_SRID"'
       },
 
@@ -194,12 +194,44 @@ style = {
    'industrial_clr': '"#d1d1d1"',
    'industrial_ol_clr': '"#d1d1d1"',
    'industrial_ol_width': 0,
-   'display_industrial_lbl' : {0:0, 11:1},
+   'display_industrial_lbl' : {0:0, 17:1},
    'industrial_font': "sc",
    'industrial_lbl_size': 8,
    'industrial_lbl_clr': '0 0 0',
    'industrial_lbl_ol_clr': "255 255 255",
    'industrial_lbl_ol_width': 2,
+
+   'parking_clr': '"#d1d1d1"',
+   'parking_ol_clr': '"#d1d1d1"',
+   'parking_ol_width': 0,
+   'display_parking_lbl' : {0:0, 18:1},
+   'parking_font': "scb",
+   'parking_text': "P",
+   'parking_lbl_size': 8,
+   'parking_lbl_clr': '0 113 189',
+   'parking_lbl_ol_clr': "255 255 255",
+   'parking_lbl_ol_width': 2,
+
+   'shop_supermarket_clr': '"#bbbbbb"',
+   'shop_supermarket_ol_clr': '"#333333"',
+   'shop_supermarket_ol_width': 0,
+   'shop_supermarket_font': "sc",
+   'shop_supermarket_lbl_clr': "0 0 0",
+   'shop_supermarket_lbl_size': 8,
+   'shop_supermarket_lbl_ol_clr': "255 255 255",
+   'shop_supermarket_lbl_ol_width': 2,
+   #'display_shop_supermarket_lbl' : {0:0, 17:1},
+
+   'tourism_camp_site_clr': '"#bbbbbb"',
+   'tourism_camp_site_ol_clr': '"#333333"',
+   'tourism_camp_site_ol_width': 0,
+   'tourism_camp_site_font': "trv",
+   'tourism_camp_site_text': "C",
+   'tourism_camp_site_lbl_clr': "0 113 189",
+   'tourism_camp_site_lbl_size': 8,
+   'tourism_camp_site_lbl_ol_clr': "255 255 255",
+   'tourism_camp_site_lbl_ol_width': 2,
+   #'display_tourism_camp_site_lbl' : {0:0, 17:1},
 
    'display_residential': 1,
    'residential_clr': '"#E3DED4"',

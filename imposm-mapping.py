@@ -369,6 +369,12 @@ landusages = Polygons(
             'hospital',
             'recycling',
         ),
+        'shop': (
+            'supermarket',
+        ),
+        'tourism': (
+            'camp_site',
+        ),
 })
 
 amenities = Points(
