@@ -27,21 +27,21 @@ LAYER
          OUTLINECOLOR _building_ol_clr
          WIDTH _building_ol_width
       END
-#if _label_buildings == 1
-      LABEL
-         TYPE TRUETYPE
-         FONT _building_font
-         PARTIALS FALSE
-         MINFEATURESIZE AUTO
-         SIZE _building_lbl_size
-         COLOR _building_lbl_clr
-         OUTLINECOLOR _building_lbl_ol_clr
-         OUTLINEWIDTH _building_lbl_ol_width
-         WRAP ' '
-         MAXLENGTH 6
-         ALIGN CENTER
-      END
-#endif
+## #if _label_buildings == 1
+##       LABEL
+##          TYPE TRUETYPE
+##          FONT _building_font
+##          PARTIALS FALSE
+##          MINFEATURESIZE AUTO
+##          SIZE _building_lbl_size
+##          COLOR _building_lbl_clr
+##          OUTLINECOLOR _building_lbl_ol_clr
+##          OUTLINEWIDTH _building_lbl_ol_width
+##          WRAP ' '
+##          MAXLENGTH 6
+##          ALIGN CENTER
+##       END
+## #endif
    END
 END
 #endif
