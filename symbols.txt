@@ -28,8 +28,64 @@ SYMBOLSET
   SYMBOL
     NAME "foot"
     TYPE PIXMAP
-    IMAGE "symbols/foot.png"
+    IMAGE "symbols/foot5.png"
+    ANCHORPOINT 1 1
   END #SYMBOL
+
+  SYMBOL
+    NAME "tennis"
+    TYPE PIXMAP
+    IMAGE "symbols/tennis6.png"
+    ANCHORPOINT 0.5 1
+  END #SYMBOL
+
+  SYMBOL
+    NAME "baseball"
+    TYPE PIXMAP
+    IMAGE "symbols/baseball5.png"
+    ANCHORPOINT 0.5 1
+  END #SYMBOL
+
+  SYMBOL
+    NAME "multi"
+    TYPE PIXMAP
+    IMAGE "symbols/multi2.png"
+    ANCHORPOINT 0.5 1
+  END #SYMBOL
+
+  SYMBOL
+    NAME "skateboard"
+    TYPE PIXMAP
+    IMAGE "symbols/skateboard1.png"
+    ANCHORPOINT 0.5 1
+  END #SYMBOL
+
+  SYMBOL
+    NAME "rugby"
+    TYPE PIXMAP
+    IMAGE "symbols/rugby4.png"
+    ANCHORPOINT 0.5 1
+  END #SYMBOL
+
+  SYMBOL
+    NAME "basket"
+    TYPE PIXMAP
+    IMAGE "symbols/basket3.png"
+    ANCHORPOINT 0.5 1
+  END #SYMBOL
+
+
+  SYMBOL
+    NAME "cimetiere"
+    TYPE VECTOR
+    POINTS
+      2 0
+      2 4
+      -99 -99 # permet d'avoir des lignes non continues
+      0 1
+      4 1
+    END
+  END
 
 
 
