@@ -47,7 +47,36 @@ LAYER
       END
 #endif
     END
+
+    CLASS
+       EXPRESSION 'farmland'
+       STYLE
+          COLOR _farmland_clr
+       END
+#if _display_farmland_symbol == 1
+       STYLE
+          COLOR _farmland_clr
+          OUTLINECOLOR _farmland_ol_clr
+          OUTLINEWIDTH _farmland_ol_width
+       END
 #endif
+#if _display_farmland_lbl==1
+      LABEL
+         TYPE TRUETYPE
+         FONT _farmland_font
+         SIZE _farmland_lbl_size
+         COLOR _farmland_lbl_clr
+         OUTLINECOLOR _farmland_lbl_ol_clr
+         OUTLINEWIDTH _farmland_lbl_ol_width
+         WRAP ' '
+         MAXLENGTH 6
+         ALIGN CENTER
+         MINFEATURESIZE AUTO
+         PARTIALS FALSE
+      END
+#endif
+    END
+
 #if _display_residential==1
     CLASS
        EXPRESSION 'residential'
@@ -126,7 +155,7 @@ LAYER
 #endif
     END
     CLASS
-        EXPRESSION {park,golf_course,meadow,grass,recreation_ground}
+        EXPRESSION {park,meadow,grass}
         STYLE
             COLOR _park_clr
         END
@@ -140,6 +169,31 @@ LAYER
           COLOR _park_lbl_clr
           OUTLINECOLOR _park_lbl_ol_clr
           OUTLINEWIDTH _park_lbl_ol_width
+          PRIORITY 2
+          POSITION cc
+          WRAP ' '
+          MAXLENGTH 6
+          ALIGN CENTER
+          MINFEATURESIZE AUTO
+        END
+#endif
+    END
+
+    CLASS
+        EXPRESSION {golf_course,recreation_ground}
+        STYLE
+            COLOR _recreation_ground_clr
+        END
+#if _display_recreation_ground_lbl==1
+        LABEL
+          TYPE TRUETYPE
+          PARTIALS FALSE
+          FONT _recreation_ground_font
+          SIZE _recreation_ground_lbl_size
+       ENCODING "utf-8"
+          COLOR _recreation_ground_lbl_clr
+          OUTLINECOLOR _recreation_ground_lbl_ol_clr
+          OUTLINEWIDTH _recreation_ground_lbl_ol_width
           PRIORITY 2
           POSITION cc
           WRAP ' '
@@ -285,7 +339,7 @@ LAYER
       STYLE
           COLOR _tourism_camp_site_clr
       END
-#if _tourism_camp_site_lbl==1
+#if _display_tourism_camp_site_lbl==1
       LABEL
         TYPE TRUETYPE
         PARTIALS FALSE
@@ -312,7 +366,7 @@ LAYER
 
 #if _display_sports==1
     CLASS
-      EXPRESSION {sports_centre,stadium,pitch}
+      EXPRESSION {stadium,pitch}
       STYLE
           COLOR _sports_clr
       END
@@ -326,6 +380,32 @@ LAYER
         OUTLINECOLOR _sports_lbl_ol_clr
         ENCODING "utf-8"
         OUTLINEWIDTH _sports_lbl_ol_width
+        PRIORITY 1
+        WRAP ' '
+        MAXLENGTH 6
+        ALIGN CENTER
+        MINFEATURESIZE AUTO
+      END
+#endif
+    END
+#endif
+
+#if _display_sports_centre==1
+    CLASS
+      EXPRESSION 'sports_centre'
+      STYLE
+          COLOR _sports_centre_clr
+      END
+#if _display_sports_centre_lbl==1
+      LABEL
+        TYPE TRUETYPE
+        PARTIALS FALSE
+        FONT _sports_centre_font
+        SIZE _sports_centre_lbl_size
+        COLOR _sports_centre_lbl_clr
+        OUTLINECOLOR _sports_centre_lbl_ol_clr
+        ENCODING "utf-8"
+        OUTLINEWIDTH _sports_centre_lbl_ol_width
         PRIORITY 1
         WRAP ' '
         MAXLENGTH 6
@@ -403,9 +483,8 @@ LAYER
 #if _display_sport_soccer_symbol == 1
       STYLE
           SYMBOL "foot"
-          SIZE 35
-          INITIALGAP 10
-          GAP 60
+          SIZE 25
+          GAP 80
       END
 #endif
 #if _display_sport_soccer_lbl==1
@@ -440,9 +519,8 @@ LAYER
 #if _display_sport_tennis_symbol == 1
       STYLE
           SYMBOL "tennis"
-          SIZE 35
-          INITIALGAP 15
-          GAP 50
+          SIZE 25
+          GAP 80
       END
 #endif
 #if _display_sport_tennis_lbl==1
@@ -513,9 +591,8 @@ LAYER
 #if _display_sport_baseball_symbol == 1
       STYLE
           SYMBOL "baseball"
-          SIZE 35
-          INITIALGAP 10
-          GAP 60
+          SIZE 25
+          GAP 80
       END
 #endif
 #if _display_sport_baseball_lbl==1
@@ -550,9 +627,8 @@ LAYER
 #if _display_sport_skateboard_symbol == 1
       STYLE
           SYMBOL "skateboard"
-          SIZE 35
-          INITIALGAP 10
-          GAP 60
+          SIZE 25
+          GAP 80
       END
 #endif
 #if _display_sport_skateboard_lbl==1
@@ -587,9 +663,8 @@ LAYER
 #if _display_sport_rugby_symbol == 1
       STYLE
           SYMBOL "rugby"
-          SIZE 35
-          INITIALGAP 10
-          GAP 60
+          SIZE 25
+          GAP 80
       END
 #endif
 #if _display_sport_rugby_lbl==1
@@ -611,6 +686,34 @@ LAYER
 #endif
     END
 #endif
+#if _display_sport_basketball_symbol == 1
+      STYLE
+          SYMBOL "basketball"
+          SIZE 25
+          GAP 80
+      END
+#endif
+#if _display_sport_basketball_lbl==1
+      LABEL
+        TYPE TRUETYPE
+        PARTIALS FALSE
+        FONT _sport_basketball_font
+        SIZE _sport_basketball_lbl_size
+        COLOR _sport_basketball_lbl_clr
+        OUTLINECOLOR _sport_basketball_lbl_ol_clr
+        ENCODING "utf-8"
+        OUTLINEWIDTH _sport_basketball_lbl_ol_width
+        PRIORITY 1
+        WRAP ' '
+        MAXLENGTH 6
+        ALIGN CENTER
+        MINFEATURESIZE AUTO
+      END
+#endif
+    END
+#endif
+
+
 
 
 END ##END LAYER
