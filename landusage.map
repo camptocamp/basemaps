@@ -688,6 +688,16 @@ LAYER
 #endif
     END
 #endif
+
+#if _display_sport_basketball==1
+    CLASS
+      NAME "sport_basketball"
+      EXPRESSION "basketball"
+      STYLE
+          COLOR _sport_basketball_clr
+          OUTLINECOLOR _sport_basketball_ol_clr
+          OUTLINEWIDTH _sport_basketball_ol_width
+      END
 #if _display_sport_basketball_symbol == 1
       STYLE
           SYMBOL "basketball"
@@ -716,10 +726,7 @@ LAYER
 #endif
 
 
-
-
 END ##END LAYER
-
 
 
 #if _display_transport_areas == 1
