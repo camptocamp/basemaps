@@ -22,8 +22,7 @@
         },
         "railways": {
             "source": "roads",
-            "sql_filter": "type IN ('rail', 'tram', 'light_rail', 'subway', 'narrow_gauge', 'preserved', 'funicular', 'monorail')",
-            "tolerance": 50.0
+            "sql_filter": "type IN ('rail', 'tram', 'light_rail', 'subway', 'narrow_gauge', 'preserved', 'funicular', 'monorail')"
         },
         "railways_gen1": {
             "source": "railways",
@@ -63,7 +62,7 @@
     },
     "tables": {
         "landusages": {
-            "fields": [
+            "columns": [
                 {
                     "type": "id",
                     "name": "osm_id",
@@ -85,7 +84,7 @@
                     "key": null
                 },
                 {
-                    "type": "pseudoarea",
+                    "type": "webmerc_area",
                     "name": "area",
                     "key": null
                 },
@@ -146,55 +145,6 @@
             ],
             "type": "polygon",
             "mapping": {
-                "amenity": [
-                    "university",
-                    "school",
-                    "college",
-                    "library",
-                    "fuel",
-                    "parking",
-                    "cinema",
-                    "theatre",
-                    "place_of_worship",
-                    "hospital"
-                ],
-                "barrier": [
-                    "hedge"
-                ],
-                "leisure": [
-                    "park",
-                    "garden",
-                    "playground",
-                    "golf_course",
-                    "sports_centre",
-                    "pitch",
-                    "stadium",
-                    "common",
-                    "nature_reserve"
-                ],
-                "tourism": [
-                    "zoo"
-                ],
-                "natural": [
-                    "wood",
-                    "land",
-                    "scrub",
-                    "wetland",
-                    "heath"
-                ],
-                "man_made": [
-                    "pier"
-                ],
-                "aeroway": [
-                    "runway",
-                    "taxiway"
-                ],
-                "place": [
-                    "island"
-                ],
-                "military": [
-                    "barracks"
-                ],
                 "landuse": [
                     "park",
                     "forest",
@@ -217,14 +167,63 @@
                     "allotments",
                     "quarry"
                 ],
+                "leisure": [
+                    "park",
+                    "garden",
+                    "playground",
+                    "golf_course",
+                    "sports_centre",
+                    "pitch",
+                    "stadium",
+                    "common",
+                    "nature_reserve"
+                ],
+                "natural": [
+                    "wood",
+                    "land",
+                    "scrub",
+                    "wetland",
+                    "heath"
+                ],
                 "highway": [
                     "pedestrian",
                     "footway"
+                ],
+                "amenity": [
+                    "university",
+                    "school",
+                    "college",
+                    "library",
+                    "fuel",
+                    "parking",
+                    "cinema",
+                    "theatre",
+                    "place_of_worship",
+                    "hospital"
+                ],
+                "barrier": [
+                    "hedge"
+                ],
+                "tourism": [
+                    "zoo"
+                ],
+                "man_made": [
+                    "pier"
+                ],
+                "aeroway": [
+                    "runway",
+                    "taxiway"
+                ],
+                "place": [
+                    "island"
+                ],
+                "military": [
+                    "barracks"
                 ]
             }
         },
         "buildings": {
-            "fields": [
+            "columns": [
                 {
                     "type": "id",
                     "name": "osm_id",
@@ -254,7 +253,7 @@
             }
         },
         "places": {
-            "fields": [
+            "columns": [
                 {
                     "type": "id",
                     "name": "osm_id",
@@ -316,7 +315,7 @@
             }
         },
         "transport_areas": {
-            "fields": [
+            "columns": [
                 {
                     "type": "id",
                     "name": "osm_id",
@@ -353,7 +352,7 @@
             }
         },
         "admin": {
-            "fields": [
+            "columns": [
                 {
                     "type": "id",
                     "name": "osm_id",
@@ -388,7 +387,7 @@
             }
         },
         "aeroways": {
-            "fields": [
+            "columns": [
                 {
                     "type": "id",
                     "name": "osm_id",
@@ -419,7 +418,7 @@
             }
         },
         "waterways": {
-            "fields": [
+            "columns": [
                 {
                     "type": "id",
                     "name": "osm_id",
@@ -456,7 +455,7 @@
             }
         },
         "barrierways": {
-            "fields": [
+            "columns": [
                 {
                     "type": "id",
                     "name": "osm_id",
@@ -498,7 +497,7 @@
             }
         },
         "transport_points": {
-            "fields": [
+            "columns": [
                 {
                     "type": "id",
                     "name": "osm_id",
@@ -549,7 +548,7 @@
             }
         },
         "amenities": {
-            "fields": [
+            "columns": [
                 {
                     "type": "id",
                     "name": "osm_id",
@@ -586,7 +585,7 @@
             }
         },
         "barrierpoints": {
-            "fields": [
+            "columns": [
                 {
                     "type": "id",
                     "name": "osm_id",
@@ -631,7 +630,7 @@
             }
         },
         "housenumbers_interpolated": {
-            "fields": [
+            "columns": [
                 {
                     "type": "id",
                     "name": "osm_id",
@@ -681,7 +680,7 @@
             }
         },
         "roads": {
-            "fields": [
+            "columns": [
                 {
                     "type": "id",
                     "name": "osm_id",
@@ -745,12 +744,9 @@
             ],
             "type": "linestring",
             "filters": {
-                "exclude_tags": [
-                    [
-                        "area",
-                        "yes"
-                    ]
-                ]
+                "reject": {
+                    "area": [ "yes" ]
+                }
             },
             "mappings": {
                 "railway": {
@@ -804,7 +800,7 @@
             }
         },
         "housenumbers": {
-            "fields": [
+            "columns": [
                 {
                     "type": "id",
                     "name": "osm_id",
@@ -849,7 +845,7 @@
             }
         },
         "waterareas": {
-            "fields": [
+            "columns": [
                 {
                     "type": "id",
                     "name": "osm_id",
@@ -871,7 +867,7 @@
                     "key": null
                 },
                 {
-                    "type": "pseudoarea",
+                    "type": "webmerc_area",
                     "name": "area",
                     "key": null
                 }
@@ -879,7 +875,8 @@
             "type": "polygon",
             "mapping": {
                 "waterway": [
-                    "riverbank"
+                    "riverbank",
+                    "dock"
                 ],
                 "landuse": [
                     "basin",

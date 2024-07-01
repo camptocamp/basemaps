@@ -103,6 +103,7 @@ LAYER
 #endif
    END
 #endif
+#if _display_industrial==1
    CLASS
      EXPRESSION {industrial,commercial,recycling}
      STYLE
@@ -743,7 +744,7 @@ LAYER
 #if OSM_FORCE_POSTGIS_EXTENT == 1
     EXTENT OSM_EXTENT
 #endif
-   DATA "geometry from OSM_PREFIX_transport_areas using unique osm_id using srid=OSM_SRID"
+   DATA "geometry from OSM_SCHEMA.OSM_PREFIX_transport_areas using unique osm_id using srid=OSM_SRID"
    PROCESSING "CLOSE_CONNECTION=DEFER"
    MAXSCALEDENOM _maxscale
    MINSCALEDENOM _minscale

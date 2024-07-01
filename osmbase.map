@@ -33,9 +33,6 @@ WEB
 END
 
 DEBUG _debug
-#if _debug > 0 || _layerdebug > 0
-CONFIG "MS_ERRORFILE" "stderr"
-#endif
 
 SYMBOLSET symbols.txt
 CONFIG "PROJ_LIB" _proj_lib

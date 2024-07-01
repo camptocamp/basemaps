@@ -3,6 +3,9 @@ LAYER
     GROUP "default"
     STATUS ON
     CONNECTIONTYPE POSTGIS
+    PROJECTION
+        "init=epsg:OSM_SRID"
+    END
     CONNECTION "OSM_DB_CONNECTION"
 #if OSM_FORCE_POSTGIS_EXTENT == 1
     EXTENT OSM_EXTENT
@@ -45,6 +48,9 @@ LAYER
     MINSCALEDENOM _minscale
     MAXSCALEDENOM _maxscale
     NAME layername(roads,_layer_suffix)
+    PROJECTION
+        "init=epsg:OSM_SRID"
+    END
     CONNECTIONTYPE postgis
     CONNECTION "OSM_DB_CONNECTION"
 #if OSM_FORCE_POSTGIS_EXTENT == 1
@@ -289,7 +295,26 @@ LAYER
     END
 #endif
 
+##################################################
+## piers                                        ##
+##################################################
 
+#if _display_piers == 1
+    CLASS
+        EXPRESSION {pier,pier00,pier10}
+#if _display_pier_outline
+        STYLE
+           WIDTH _pier_width
+           OUTLINEWIDTH _pier_ol_width
+           OUTLINECOLOR _pier_ol_clr
+        END
+#endif
+        STYLE
+            WIDTH _pier_width
+            COLOR _pier_clr
+        END
+    END
+#endif
 
 
 
@@ -897,12 +922,15 @@ LAYER
     MAXSCALEDENOM _maxscale
     TYPE LINE
     NAME layername(aeroways,_layer_suffix)
+    PROJECTION
+        "init=epsg:OSM_SRID"
+    END
     CONNECTIONTYPE postgis
     CONNECTION "OSM_DB_CONNECTION"
 #if OSM_FORCE_POSTGIS_EXTENT == 1
     EXTENT OSM_EXTENT
 #endif
-    DATA "geometry from (select geometry, osm_id, type from OSM_PREFIX_aeroways) as foo using unique osm_id using srid=OSM_SRID"
+    DATA "geometry from (select geometry, osm_id, type from OSM_SCHEMA.OSM_PREFIX_aeroways) as foo using unique osm_id using srid=OSM_SRID"
     CLASSITEM "type"
     CLASS
       EXPRESSION "runway"
