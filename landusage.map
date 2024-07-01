@@ -129,6 +129,7 @@ LAYER
 ##      END
 ## #endif
    END
+#endif
    CLASS
      EXPRESSION 'parking'
      STYLE
@@ -729,6 +730,7 @@ LAYER
 
 END ##END LAYER
 
+#endif
 
 #if _display_transport_areas == 1
 LAYER
