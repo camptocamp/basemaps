@@ -9,7 +9,7 @@ CONFIG
   #PROJ_LIB _proj_lib
   END
   MAPS
-    BASEMAPS "/etc/mapserver/osm-google.map"
+    BASEMAPS "/etc/mapserver/mapserver.map"
   END
 END
 
