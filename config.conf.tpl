@@ -7,6 +7,7 @@ CONFIG
 #endif
 
   ##PROJ_LIB _proj_lib
+  PROJ_LIB "/usr/local/share/proj/"
   END
   MAPS
     BASEMAPS "/etc/mapserver/mapserver.map"
