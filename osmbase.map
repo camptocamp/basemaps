@@ -35,7 +35,7 @@ END
 DEBUG _debug
 
 SYMBOLSET symbols.txt
-CONFIG "PROJ_LIB" _proj_lib
+## CONFIG "PROJ_LIB" _proj_lib
 PROJECTION
    "init=epsg:OSM_SRID"
 END
