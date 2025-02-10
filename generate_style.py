@@ -1504,7 +1504,21 @@ namedstyles = {
       'pedestrian_ol_clr': '255 255 255',
       'pier_ol_clr': '0 0 0',
       'footway_clr': '"#000000"'
-   },
+   },'tadao':{
+       'land_opacity': 70,
+        'waterarea_opacity': 70,
+        'waterways_opacity': 70,
+        'landusage_opacity': 70,
+        'transport_opacity': 70,
+        'roads_opacity': 70,
+        'tunnel_opacity': 40,
+        'railway_opacity': 70,
+        'railway_tunnel_opacity': 40,
+        'border_opacity': 70,
+        'building_opacity': 70,
+        'aeroways_opacity': 70,
+        'places_opacity': 70,
+    }
 }
 
 # these are the preconfigured styles that can be called when creating the final mapfile,
@@ -1523,7 +1537,8 @@ style_aliases = {
    "bing":"default,outlined,bing",
    "michelin":"default,outlined,centerlined,michelin",
 
-   "bw":"default,outlined,centerlined,bw"
+   "bw":"default,outlined,centerlined,bw",
+   "tadao": "default,outlined,google,tadao"
 }
 
 
